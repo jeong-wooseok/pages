@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<div class="home">
+  <header class="page-header">
+    <h1 class="page-title">{{ page.title }}</h1>
+  </header>
+
+  {{ content }}
+
+  {% if site.posts.size > 0 %}
+    <h2 class="post-list-heading">{{ page.list_title | default: "최근 포스트" }}</h2>
+    <ul class="post-list">
+      {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%Y-%m-%d" }}
+          {% if post.categories %}
+            <span class="category-badge">{{ post.categories | first }}</span>
+          {% endif %}
+        </span>
+        <h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </h3>
+        {% if post.excerpt %}
+          <div class="post-excerpt">
+            {{ post.excerpt }}
+            <a href="{{ post.url | relative_url }}" class="read-more">더 읽기 &raquo;</a>
+          </div>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  {% endif %}
+</div> 

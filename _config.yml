@@ -1,0 +1,56 @@
+title: AI하는 아이 기술블로그
+email: aieeiee030303@gmail.com
+description: AI 관련 기술 및 프로젝트 공유 블로그
+baseurl: ""
+url: "https://aidoingai.com"
+github_username: jeong-wooseok
+
+# 빌드 설정
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-archives
+
+# 카테고리 설정
+category_archive:
+  type: liquid
+  path: /categories/
+
+# 메뉴 설정
+navigation:
+  - title: 홈
+    url: /
+  - title: N8N
+    url: /categories/n8n/
+  - title: Trend
+    url: /categories/trend/
+  - title: Small Talk
+    url: /categories/small-talk/
+  - title: Announcement
+    url: /categories/announcement/
+  - title: 로그인
+    url: /login/
+  - title: 회원가입
+    url: /register/
+
+# 회원 관리 설정
+auth:
+  provider: disqus
+  disqus:
+    shortname: aidoingai
+
+# 제외 파일
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# 포스트 permalink 설정
+permalink: /:year/:month/:day/:title/ 
